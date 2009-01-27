@@ -213,7 +213,7 @@ class dbStore:
   def packTag(self, type, tags, tag):
     string = tags.get(tag, None)
     if(string):
-      string = str(string)
+      string = string.encode('utf8')
       return(type + struct.pack("H", len(string)) + string)
     return('')
 
